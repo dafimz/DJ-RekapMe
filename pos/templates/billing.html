@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Cashier - Rekap Me</title>
+{% endblock %}
+
+{% block content %}
+<h3 class="text-center">Cashier</h3>
+<div class="row">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form action="#" method="post"> {% csrf_token %}
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Enter ID: </span>
+            </div>
+              <input class="form-control" type="customerID" name="customerID" placeholder="Admin ID" required/>
+            <div class="input-group-append">
+              <button class="btn btn-success" type="submit">Start &raquo;</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+              <div class="col-md-4">
+                  <img src="{% static "img/Menu.jpeg"%}" style="width:100%" alt="">
+              </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Pricelist</h5>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small class="text-muted"><i>By. Angkringan Arjuna</i></small></p>
+                </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+{% endblock %}

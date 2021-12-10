@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Home - Rekap Me</title>
+{% endblock %}
+
+{% block nav %}
+<a class="navbar-brand" href="{% url 'home' %}">Angkringan Arjuna</a>
+<ul class="navbar-nav md-auto">
+             
+    <li class="nav-item">
+        <a class="nav-link activate" href="{% url 'login_page' %}">Login</a>
+    </li>
+
+</ul>
+{% endblock nav%}
+
+{% block content %}
+    
+
+{% endblock content %}
