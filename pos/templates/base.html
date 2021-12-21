@@ -20,6 +20,9 @@
     
       <a class="navbar-brand" href="{% url 'dashboard' %}">Angkringan Arjuna</a>
       <ul class="navbar-nav md-auto">
+        <li class="nav-item">
+          <a class="nav-link activate" href="{% url 'order_csv' %}">File Order-CSV</a>
+      </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link activate" href="{% url 'logout_page' %}">Logout</a>

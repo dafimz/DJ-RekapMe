@@ -1,8 +1,24 @@
 from django.shortcuts import render, redirect
 import json
+from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Product, Customer, Order, OrderItem
+from .models import Product, Customer, OrderItem, Order
+import csv
+
+def order_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response ['Content-Disposition'] = 'attachment; filename="order.csv"'
+    
+    writer = csv.writer(response)
+
+    orders = Order.objects.all()
+    writer.writerow(['Cashier Name','Total_Price', 'Status', 'Time'])
+
+    for order in orders:
+        writer.writerow([order.customer, order.total_price, order.success, order.timestamp])
+
+    return response
 
 def home(request):
     return render(request, 'home.html')

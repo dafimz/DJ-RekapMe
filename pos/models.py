@@ -29,6 +29,9 @@ class Order(models.Model):
     success = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=True)
 
+
+    # object = models.Manager()
+
     def __str__(self):
         return 'Order {0}'.format(self.id)
 
